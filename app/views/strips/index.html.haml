@@ -1,0 +1,7 @@
+%h1 All Strips For: #{@comic.name}
+
+-@strips.each do |s|
+  %p -: #{@comic.url}#{s.number}
+
+-if @strips.empty?
+  No strips yet!

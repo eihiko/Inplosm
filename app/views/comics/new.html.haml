@@ -1,0 +1,11 @@
+=form_for :comic, url: comics_path do |f|
+  %p
+    =f.label :name
+    =f.text_field :name
+  %p
+    =f.label :url
+    =f.text_field :url
+  %p
+    =f.submit
+
+

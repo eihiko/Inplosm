@@ -11,28 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140506233441) do
+ActiveRecord::Schema.define(version: 20140509195713) do
 
   create_table "comics", force: true do |t|
-    t.string "name"
-    t.string "url"
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "strips", force: true do |t|
-    t.string  "url"
-    t.integer "comic_id"
+    t.integer  "comic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "number"
   end
 
   add_index "strips", ["comic_id"], name: "index_strips_on_comic_id"
+  add_index "strips", ["number"], name: "index_strips_on_number"
 
   create_table "tag_types", force: true do |t|
-    t.string "type"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tags", force: true do |t|
-    t.integer "strip_id"
-    t.integer "tag_type_id"
-    t.integer "votes"
+    t.integer  "votes"
+    t.integer  "strip_id"
+    t.integer  "tag_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "tags", ["strip_id"], name: "index_tags_on_strip_id"

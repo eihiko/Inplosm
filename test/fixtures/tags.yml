@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  votes: 1
+  strip_id: 
+  tag_type_id: 
+
+two:
+  votes: 1
+  strip_id: 
+  tag_type_id: 
