@@ -7,7 +7,7 @@ class StripsController < ApplicationController
 
   def show
     @comic = Comic.find(params[:comic_id])
-    @strip = Strip.find(params[:id])
+    @strip = @comic.strips.where(number: params[:id]).first
 
   end
 
