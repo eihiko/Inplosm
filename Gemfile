@@ -41,4 +41,4 @@ gem 'spring',        group: :development
 gem "haml"
 gem "pry-rails"
 gem "pry-plus"
-
+gem "httparty"

@@ -1,5 +1,21 @@
 %h1 Comic Strip Information
 
-%p Comic: #{@comic.name}
-%p Url: #{@comic.url}#{@strip.number}
+%a{ :href => "#{comic_strip_path(@comic.id,params[:id])}/previous"}= "(<-)"
+%a{ :href => "#{comic_strip_path(@comic.id,params[:id])}/next"}= "(->)"
+
+-if @strip
+  %p Comic: #{@comic.name}
+  %p 
+    Url:
+    %a{ :href => "#{@comic.url}#{@strip.number}" }= "-: Strip #{@strip.number}"
+  %h2 Tags:
+  -@strip.tags.each do |tag|
+    %p #{tag.tag_type.type} (#{tag.votes})
+  -if @strip.tags.empty?
+    %p= "No tags yet!"
+  
+  
+
+-if not @strip
+  %p It seems that strip #{params[:id]} does not exist for #{@comic.name} :T
 

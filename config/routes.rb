@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     resources :strips
   end
 
+  get "comics/:comic_id/strips/:id/previous", to: "strips#previous"
+  get "comics/:comic_id/strips/:id/next", to: "strips#next"
+  get "comics/:comic_id/strips/:id/tag", to: "strips#tag"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

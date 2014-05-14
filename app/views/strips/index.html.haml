@@ -1,7 +1,10 @@
 %h1 All Strips For: #{@comic.name}
 
 -@strips.each do |s|
-  %p -: #{@comic.url}#{s.number}
+  %p
+    ="-:"
+    %a{ href: "/comics/#{@comic.id}/strips/#{s.number}"}= "Strip #{s.number}"
+    =link_to '(X)', comic_strip_path(@comic.id, s.number), method: :delete, data: {confirm: 'Are you sure?'}
 
 -if @strips.empty?
   No strips yet!
